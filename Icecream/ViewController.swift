@@ -14,10 +14,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        icecream.names(forFlavor: "Mexican Chocolate")
         
-        
+        icecream.count(forFlavor: "Mexican Chocolate")
         // Test your functions here. You have access to the icecream constant created above.
-        
         
         
         

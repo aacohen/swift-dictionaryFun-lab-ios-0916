@@ -36,6 +36,7 @@ class Icecream {
             numberOfPeopleWhoLikeThatFlavor += 1
         }
     }
+        
         print(numberOfPeopleWhoLikeThatFlavor)
         return numberOfPeopleWhoLikeThatFlavor
     }

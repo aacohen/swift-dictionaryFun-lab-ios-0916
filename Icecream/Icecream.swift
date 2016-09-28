@@ -31,8 +31,8 @@ class Icecream {
     // 3.
     func count(forFlavor flavor: String ) -> Int {
       var numberOfPeopleWhoLikeThatFlavor = 0
-        for (_,iceCreamFalvor)in favoriteFlavorsOfIceCream {
-            if flavor == iceCreamFalvor  {
+        for (_,iceCreamFlavor)in favoriteFlavorsOfIceCream {
+            if flavor == iceCreamFlavor  {
             numberOfPeopleWhoLikeThatFlavor += 1
         }
     }
@@ -55,7 +55,7 @@ class Icecream {
                personsFavorite = flavor
             }
             else {
-            personsFavorite = nil
+            return nil
             }
         }
         return personsFavorite
@@ -65,18 +65,19 @@ class Icecream {
     
     
     
-    // 5.
+    // 5. will change the given person's preferred ice cream flavor to a new one
     func replace(newflavor: String, forPerson: String) -> Bool {
+        var changed = false
         for (name, flavor) in favoriteFlavorsOfIceCream {
             if forPerson == name {
-                favoriteFlavorsOfIceCream[flavor] = newflavor
-                return true
+                changed = false
             }
             else {
-                return false
+                favoriteFlavorsOfIceCream[flavor] = newflavor
+                changed = true
             }
         }
-        
+        return changed
     }
    
     
@@ -88,15 +89,17 @@ class Icecream {
     // 6. remove a person from the list. 
     
     func remove(person: String) -> Bool {
+        var removedPerson = false
         for (name, _) in favoriteFlavorsOfIceCream {
             if person == name {
                 favoriteFlavorsOfIceCream[name] = nil
-                return true
+                removedPerson = true
             }
             else {
-                return false
+                removedPerson = false
             }
         }
+        return removedPerson
     }
     
     
@@ -113,16 +116,17 @@ class Icecream {
     
     // 8.
     func add(person:String, withFlavor: String) -> Bool {
-        
+        var addedPerson = false
         for (name, _) in favoriteFlavorsOfIceCream {
             if person == name {
-                return false
+                addedPerson = false
             }
             else {
                 favoriteFlavorsOfIceCream [person] =  withFlavor
-                return true
+                addedPerson = true
         }
     }
+        return addedPerson
     }
 
     
@@ -130,9 +134,10 @@ class Icecream {
     
     func attendeeList() -> String{
         
-        let allNames = Array(favoriteFlavorsOfIceCream.keys).sorted()
+     //   let allNames = Array(favoriteFlavorsOfIceCream.keys).sorted()
         
-        return
+      //  return
+        return "Not finished"
     }
     
     

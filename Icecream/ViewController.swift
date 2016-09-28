@@ -16,11 +16,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         icecream.names(forFlavor: "Mexican Chocolate")
         
-        icecream.count(forFlavor: "Mexican Chocolate")
-        // Test your functions here. You have access to the icecream constant created above.
+       let numberOfPeople = icecream.count(forFlavor: "Mexican Chocolate")
+        print("Count Method of how many people like this flavor: \(numberOfPeople)")
         
-        
-        
+        let wasItReplaced = icecream.replace(newflavor: "Coffee", forPerson: "Ariela")
+        print (icecream.favoriteFlavorsOfIceCream.values)
+        print("replaced function called - was it replaced \(wasItReplaced)")
         
         
         

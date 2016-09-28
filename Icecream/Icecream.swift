@@ -46,15 +46,38 @@ class Icecream {
     
     
     
-    // 4.
+    // 4. create a function. Takes a name and will tell you what flavor the person likes
    
-    
+    func flavor(forPerson person: String) -> String? {
+        var personsFavorite = ""
+        for (name, flavor) in favoriteFlavorsOfIceCream {
+            if name == person {
+               personsFavorite = flavor
+            }
+            else {
+            personsFavorite = nil
+            }
+        }
+        return personsFavorite
+    }
     
     
     
     
     
     // 5.
+    func replace(newflavor: String, forPerson: String) -> Bool {
+        for (name, flavor) in favoriteFlavorsOfIceCream {
+            if forPerson == name {
+                favoriteFlavorsOfIceCream[flavor] = newflavor
+                return true
+            }
+            else {
+                return false
+            }
+        }
+        
+    }
    
     
     
@@ -62,37 +85,55 @@ class Icecream {
     
     
     
-    // 6.
+    // 6. remove a person from the list. 
+    
+    func remove(person: String) -> Bool {
+        for (name, _) in favoriteFlavorsOfIceCream {
+            if person == name {
+                favoriteFlavorsOfIceCream[name] = nil
+                return true
+            }
+            else {
+                return false
+            }
+        }
+    }
     
     
     
+    // 7. how many attendees are coming to the party
     
-    
-    
-    
-    
-    // 7.
-    
-    
-    
-    
+    func numberOfAttendees() -> Int {
+        let numberOfAttendees = favoriteFlavorsOfIceCream.count
+        return numberOfAttendees
+    }
     
     
     
     
     // 8.
-    
-    
-    
-    
-    
-    
-    
-    
+    func add(person:String, withFlavor: String) -> Bool {
+        
+        for (name, _) in favoriteFlavorsOfIceCream {
+            if person == name {
+                return false
+            }
+            else {
+                favoriteFlavorsOfIceCream [person] =  withFlavor
+                return true
+        }
+    }
+    }
+
     
     // 9.
     
-    
+    func attendeeList() -> String{
+        
+        let allNames = Array(favoriteFlavorsOfIceCream.keys).sorted()
+        
+        return
+    }
     
     
     

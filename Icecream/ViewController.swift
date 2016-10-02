@@ -20,10 +20,10 @@ class ViewController: UIViewController {
         print("Count Method of how many people like this flavor: \(numberOfPeople)")
         
         let wasItReplaced = icecream.replace(newflavor: "Coffee", forPerson: "Ariela")
-        print (icecream.favoriteFlavorsOfIceCream.values)
-        print("replaced function called - was it replaced \(wasItReplaced)")
         
         
+        let favoriteFlavor = icecream.flavor(forPerson: "Joe")
+    print (favoriteFlavor)
         
     }
 

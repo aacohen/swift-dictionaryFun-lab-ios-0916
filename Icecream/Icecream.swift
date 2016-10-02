@@ -21,7 +21,7 @@ class Icecream {
                 peopleWhoLikeThisFlavor.append(name)
             }
         }
-        print(peopleWhoLikeThisFlavor)
+//        print(peopleWhoLikeThisFlavor)
         return peopleWhoLikeThisFlavor
         
     }
@@ -38,7 +38,7 @@ class Icecream {
     }
         
         
-        print(numberOfPeopleWhoLikeThatFlavor)
+//        print(numberOfPeopleWhoLikeThatFlavor)
         return numberOfPeopleWhoLikeThatFlavor
     }
     
@@ -49,16 +49,28 @@ class Icecream {
     // 4. create a function. Takes a name and will tell you what flavor the person likes
    
     func flavor(forPerson person: String) -> String? {
+        
         var personsFavorite = ""
+        
         for (name, flavor) in favoriteFlavorsOfIceCream {
-            if name == person {
-               personsFavorite = flavor
+            print(name, flavor, person)
+            var inList = true
+            if person == name {
+                
+                personsFavorite = flavor
+                return personsFavorite
             }
             else {
-            return nil
+                print("else becoming true")
+                
+                
             }
+            
         }
-        return personsFavorite
+        
+        return nil
+       
+        
     }
     
     
@@ -68,14 +80,13 @@ class Icecream {
     // 5. will change the given person's preferred ice cream flavor to a new one
     func replace(newflavor: String, forPerson: String) -> Bool {
         var changed = false
-        for (name, flavor) in favoriteFlavorsOfIceCream {
-            if forPerson == name {
-                changed = false
-            }
-            else {
-                favoriteFlavorsOfIceCream[flavor] = newflavor
+        for (key, _) in favoriteFlavorsOfIceCream {
+            if forPerson == key {
+                favoriteFlavorsOfIceCream[key] = newflavor
+                
                 changed = true
             }
+            
         }
         return changed
     }
@@ -133,17 +144,31 @@ class Icecream {
     // 9.
     
     func attendeeList() -> String{
-        
-     //   let allNames = Array(favoriteFlavorsOfIceCream.keys).sorted()
-        
-      //  return
-        return "Not finished"
+//        var fullListArray: [String] = []
+//        for (key, value) in favoriteFlavorsOfIceCream {
+//            fullListArray.append("\n\(key) likes \(value).")
+//        }
+//        
+//        let allNames = Array(fullListArray).sorted()
+//        print(allNames)
+//        var completedList = ""
+//        for (_, value) in allNames.enumerated() {
+//            let completedList = completedList += value
+//        }
+        print("beginning of function")
+        var completeListString = ""
+   let allNames = Array(favoriteFlavorsOfIceCream.keys).sorted()
+        print(allNames)
+        for name in allNames {
+         let item = "\n\(name) likes \(favoriteFlavorsOfIceCream[name])"
+            completeListString = completeListString + item
+        }
+        print (completeListString)
+        return completeListString
+    
+    
     }
     
-    
-    
-    
-    
+}
     
 
-}
